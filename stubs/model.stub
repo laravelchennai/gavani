@@ -1,0 +1,35 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Models\BaseModel;
+use App\Models\Concerns\ActivityLogStamp;
+use App\Models\Concerns\TimeStamp;
+use App\Models\Concerns\UserStamp;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class {{ class }} extends BaseModel
+{
+    use ActivityLogStamp;
+    use HasFactory;
+    use SoftDeletes;
+    use TimeStamp;
+    use UserStamp;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'integer',
+    ];
+}
