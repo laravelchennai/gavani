@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exports\ExcelExport\FromFilteredQuery;
+namespace App\Exports\ExcelExport\FromFilteredQuery\Monitoring;
 
 use App\Exports\ExcelExport\FromFilteredQuery\Traits\SetFileNameTrait;
 use App\Exports\ExcelExport\FromFilteredQuery\Traits\SetPropertyTrait;
