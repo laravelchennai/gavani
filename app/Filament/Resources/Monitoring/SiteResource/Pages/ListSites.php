@@ -32,6 +32,12 @@ class ListSites extends BaseListRecords
                     ->label('Name')
                     ->sortable()
                     ->searchable()
+                    ->limit(30)
+                    ->tooltip(function ($column) {
+                        if (strlen($column->getState()) > $column->getLimit()) {
+                            return $column->getState();
+                        };
+                    })
                     ->default('N/A'),
 
                 BooleanColumn::make('latestSslCertificateScan.is_ssl_certificate_valid')
