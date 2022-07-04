@@ -2,6 +2,7 @@
 
 namespace App\Filament\Base\Resources\Pages;
 
+use Illuminate\Support\Str;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -47,5 +48,11 @@ class BaseViewRecord extends ViewRecord
         parent::mount($record);
 
         $this->childClassPath = md5((new \ReflectionClass(get_class($this)))->getName());
+    }
+
+    protected function getTitle(): string
+    {
+        return Str::of('Edit ')
+            ->append(Str::singular(static::getResource()::getPluralLabel()));
     }
 }
